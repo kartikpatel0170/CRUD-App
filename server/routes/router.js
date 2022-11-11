@@ -18,6 +18,7 @@ router.post("/register", async(req,res)=>{
     }
 
     try {
+        // preuser 
         const preuser = await users.findOne({email:email});
         console.log(preuser);
 
@@ -41,7 +42,7 @@ router.post("/register", async(req,res)=>{
 
 
 // get userdata -- GET method
-router.get("/getdata",async(req,res)=>{
+router.get("/getdata", async(req,res)=>{
     try {
         const userdata = await users.find();
         res.status(201).json(userdata)
